@@ -199,3 +199,53 @@ a:hover { text-decoration: underline; color: var(--color-accent-hover); }
   .section-cards { grid-template-columns: 1fr; }
   .random-projects__grid { grid-template-columns: 1fr; }
 }
+
+/* 图片链接样式 */
+.subsection-image-link {
+  display: block;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.subsection-image-link:hover {
+  transform: translateY(-5px);
+  opacity: 0.9;
+}
+
+/* 图片样式 */
+.subsection__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.subsection-image-link:hover .subsection__image {
+  transform: scale(1.03);
+}
+
+/* 响应式图片高度 */
+@media (min-width: 768px) {
+  .subsection__image {
+    height: 250px;
+  }
+}
+
+/* 调整section的间距 */
+.subsection {
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.subsection:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
