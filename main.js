@@ -5,17 +5,11 @@
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Random projects: pick up to 6 from PROJECTS (shuffled)
+  // Fixed projects: display first 4 from PROJECTS
   var container = document.getElementById('random-projects-container');
   if (container && typeof PROJECTS !== 'undefined' && PROJECTS.length) {
-    var copy = PROJECTS.slice();
-    for (var i = copy.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var t = copy[i];
-      copy[i] = copy[j];
-      copy[j] = t;
-    }
-    var toShow = copy.slice(0, 6);
+    var toShow = PROJECTS.slice(0, 4); // 只取前4个项目
+    
     toShow.forEach(function (p) {
       var card = document.createElement('article');
       card.className = 'project-card';
