@@ -11,5 +11,4 @@ const PROJECTS = [
    link: 'https://drive.google.com/file/d/1sJr8lWtlXrdIalVqWVLm6r7kgQlUQyO0/view?usp=drive_link', year: '2022' },
   { title: 'Generative AI, Embodied Media', section: 'CriticalAI', description: 'A Critical Thinking on Generative AI Art.', 
    link: 'https://drive.google.com/file/d/1yx7gxIVisNrkavw50MOXD_0oR1j-b1Cn/view?usp=drive_link', year: '2023' },
-  { title: 'Archive Digitization', section: 'digital-humanities', description: 'Digitizing and cataloging archival materials.', link: 'sections/digital-humanities.html#sub-section-1', year: '2024' },
-];
+ ];
