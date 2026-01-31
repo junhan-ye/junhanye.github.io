@@ -6,174 +6,80 @@
   <title>Junhan Ye — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
+    /* 添加新样式 */
     :root {
-      /* 科技感深色配色方案 */
-      --sidebar-width: 260px;
-      --content-max-width: 1200px;
-      
-      /* 主色调 - 深色背景 */
-      --bg-primary: #0a0e17;
-      --bg-secondary: #121826;
-      --bg-tertiary: #1a1f30;
-      
-      /* 界面元素 */
-      --surface-primary: #1e2338;
-      --surface-secondary: #262b40;
-      --surface-hover: #2d334d;
-      
-      /* 边框与分隔线 */
-      --border-color: #2a3049;
-      --border-light: #3a4160;
-      
-      /* 文字颜色 */
-      --text-primary: #f0f2f8;
-      --text-secondary: #b8c0e0;
-      --text-muted: #8a93b8;
-      
-      /* 强调色 - 科技蓝 */
-      --accent-primary: #4d7cfe;
-      --accent-secondary: #3a6bf0;
-      --accent-glow: rgba(77, 124, 254, 0.2);
-      
-      /* 霓虹效果色 */
-      --neon-blue: #00d4ff;
-      --neon-purple: #9d4edd;
-      --neon-green: #00ff9d;
-      
-      /* 效果参数 */
-      --transition-speed: 0.25s;
-      --border-radius: 12px;
-      --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      --glow-shadow: 0 0 20px var(--accent-glow);
-    }
-
-    * {
-      box-sizing: border-box;
+      --sidebar-width: 280px;
+      --sidebar-bg: #f8f9fa;
+      --content-bg: #ffffff;
+      --border-color: #eaeaea;
+      --text-primary: #333;
+      --text-secondary: #666;
+      --accent-color: #0077cc;
+      --transition-speed: 0.3s;
     }
 
     body {
       margin: 0;
       font-family: 'Source Sans 3', sans-serif;
       color: var(--text-primary);
-      background: var(--bg-primary);
+      background: var(--content-bg);
       display: flex;
       min-height: 100vh;
-      line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    /* 添加科技感背景效果 */
-    body::before {
-      content: '';
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: 
-        radial-gradient(circle at 20% 50%, rgba(77, 124, 254, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(157, 78, 221, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(0, 255, 157, 0.03) 0%, transparent 50%);
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    /* 侧边栏 - 科技感设计 */
+    /* 侧边栏样式 */
     .sidebar {
       width: var(--sidebar-width);
-      background: linear-gradient(165deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+      background: var(--sidebar-bg);
       border-right: 1px solid var(--border-color);
-      padding: 2.5rem 1.5rem;
+      padding: 2rem 1.5rem;
       position: fixed;
       height: 100vh;
       overflow-y: auto;
       box-sizing: border-box;
-      z-index: 10;
-      backdrop-filter: blur(10px);
-      box-shadow: 5px 0 30px rgba(0, 0, 0, 0.4);
     }
 
     .site-header {
       margin-bottom: 3rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border-color);
     }
 
     .site-name {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.9rem;
+      font-size: 1.8rem;
       margin: 0 0 0.5rem 0;
       color: var(--text-primary);
-      letter-spacing: 0.5px;
-      position: relative;
-      display: inline-block;
-    }
-
-    .site-name::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 40px;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent-primary), var(--neon-blue));
-      border-radius: 2px;
     }
 
     .contact-nav {
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.5rem;
     }
 
     .contact-nav a {
       color: var(--text-secondary);
       text-decoration: none;
       font-size: 0.95rem;
-      font-weight: 500;
-      transition: all var(--transition-speed);
-      padding: 0.5rem 0;
-      position: relative;
-      display: inline-block;
+      transition: color var(--transition-speed);
     }
 
     .contact-nav a:hover {
-      color: var(--accent-primary);
-      transform: translateX(5px);
+      color: var(--accent-color);
     }
 
-    .contact-nav a::before {
-      content: '';
-      position: absolute;
-      left: -10px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 4px;
-      height: 0;
-      background: var(--accent-primary);
-      border-radius: 2px;
-      transition: height 0.2s ease;
-    }
-
-    .contact-nav a:hover::before {
-      height: 70%;
-    }
-
-    /* 目录导航 */
+    /* 目录样式 */
     .table-of-contents {
-      margin-top: 2.5rem;
+      margin-top: 2rem;
     }
 
     .toc-title {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.3rem;
-      margin-bottom: 1.2rem;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
       color: var(--text-primary);
-      font-weight: 600;
-      letter-spacing: 0.5px;
     }
 
     .toc-list {
@@ -189,103 +95,58 @@
     .toc-link {
       display: flex;
       flex-direction: column;
-      padding: 1rem 1.2rem;
+      padding: 0.8rem 1rem;
       text-decoration: none;
-      color: var(--text-secondary);
-      border-radius: var(--border-radius);
+      color: var(--text-primary);
+      border-radius: 6px;
       transition: all var(--transition-speed);
-      background: var(--surface-primary);
+      background: transparent;
       border: 1px solid transparent;
-      position: relative;
-      overflow: hidden;
     }
 
-    .toc-link:hover {
-      background: var(--surface-hover);
-      border-color: var(--border-light);
-      transform: translateY(-2px);
-      box-shadow: var(--card-shadow);
-    }
-
+    .toc-link:hover,
     .toc-link.active {
-      background: var(--surface-secondary);
-      border-color: var(--accent-primary);
-      box-shadow: var(--glow-shadow);
-    }
-
-    .toc-link::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 0;
-      background: linear-gradient(to bottom, var(--accent-primary), var(--neon-blue));
-      transition: height 0.3s ease;
-    }
-
-    .toc-link:hover::before,
-    .toc-link.active::before {
-      height: 100%;
+      background: var(--content-bg);
+      border-color: var(--border-color);
+      color: var(--accent-color);
     }
 
     .toc-label {
       font-weight: 600;
-      font-size: 1.05rem;
-      margin-bottom: 0.3rem;
-      color: var(--text-primary);
-      z-index: 1;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
     }
 
     .toc-desc {
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       line-height: 1.4;
-      z-index: 1;
     }
 
-    /* 主内容区 */
+    /* 主内容区样式 */
     .main-content {
       flex: 1;
       margin-left: var(--sidebar-width);
-      padding: 3.5rem 5rem;
-      max-width: var(--content-max-width);
+      padding: 3rem 4rem;
+      max-width: 1500px;
       box-sizing: border-box;
-      width: calc(100% - var(--sidebar-width));
-      position: relative;
     }
 
-    /* 介绍区域 */
     .intro-section {
-      margin-bottom: 4rem;
-      padding-bottom: 2.5rem;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
       border-bottom: 1px solid var(--border-color);
     }
 
     .intro-text {
-      font-size: 1.3rem;
-      line-height: 1.7;
-      color: var(--text-secondary);
-      max-width: 800px;
-      font-weight: 300;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin: 0;
     }
 
     .intro-text strong {
-      color: var(--text-primary);
-      font-weight: 600;
-      position: relative;
-      padding: 0 2px;
-    }
-
-    .intro-text strong::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent-primary), transparent);
-      border-radius: 1px;
+      color: var(--accent-color);
     }
 
     /* 项目展示区 */
@@ -295,140 +156,81 @@
 
     .random-projects__title {
       font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin-bottom: 0.5rem;
       color: var(--text-primary);
-      position: relative;
-      display: inline-block;
-    }
-
-    .random-projects__title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent-primary), var(--neon-blue));
-      border-radius: 2px;
     }
 
     .random-projects__subtitle {
-      color: var(--text-muted);
-      margin-bottom: 2.5rem;
-      font-size: 1.05rem;
-      font-weight: 300;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 1rem;
     }
 
     .random-projects__grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
     }
 
-    /* 项目卡片 - 科技感设计 */
     .project-card {
-      background: linear-gradient(145deg, var(--surface-primary), var(--surface-secondary));
+      background: var(--sidebar-bg);
       border: 1px solid var(--border-color);
-      border-radius: var(--border-radius);
-      padding: 2rem;
+      border-radius: 8px;
+      padding: 1.5rem;
       transition: all var(--transition-speed);
       text-decoration: none;
       color: inherit;
       display: block;
-      position: relative;
-      overflow: hidden;
-      height: 100%;
     }
 
     .project-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), var(--glow-shadow);
-      border-color: var(--accent-primary);
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent-primary), var(--neon-blue));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.4s ease;
-    }
-
-    .project-card:hover::before {
-      transform: scaleX(1);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent-color);
     }
 
     .project-category {
       display: inline-block;
-      padding: 0.4rem 1rem;
-      background: rgba(77, 124, 254, 0.15);
-      color: var(--accent-primary);
+      padding: 0.3rem 0.8rem;
+      background: var(--accent-color);
+      color: white;
       border-radius: 20px;
       font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.5px;
-      border: 1px solid rgba(77, 124, 254, 0.3);
-      backdrop-filter: blur(5px);
+      margin-bottom: 0.8rem;
     }
 
     .project-title {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: 600;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
       color: var(--text-primary);
-      line-height: 1.4;
     }
 
     .project-desc {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: var(--text-secondary);
-      line-height: 1.6;
-      font-weight: 300;
+      line-height: 1.5;
     }
 
     /* 页脚 */
     .site-footer {
-      margin-top: 5rem;
-      padding-top: 2.5rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
       border-top: 1px solid var(--border-color);
       text-align: center;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       font-size: 0.9rem;
     }
 
     /* 响应式设计 */
-    @media (min-width: 1400px) {
-      :root {
-        --sidebar-width: 280px;
-        --content-max-width: 1300px;
-      }
-      
-      .main-content {
-        padding: 4rem 6rem;
-      }
-      
-      .random-projects__grid {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 2.5rem;
-      }
-    }
-
     @media (max-width: 1024px) {
       :root {
         --sidebar-width: 240px;
-        --content-max-width: none;
       }
       
       .main-content {
-        padding: 3rem 3.5rem;
-        max-width: none;
+        padding: 2rem;
       }
     }
 
@@ -441,16 +243,14 @@
         position: relative;
         width: 100%;
         height: auto;
-        padding: 2rem;
+        padding: 1.5rem;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
       }
       
       .main-content {
         margin-left: 0;
-        padding: 2.5rem 2rem;
-        max-width: none;
+        padding: 1.5rem;
       }
       
       .contact-nav {
@@ -461,44 +261,23 @@
       
       .toc-list {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1rem;
-      }
-      
-      .toc-link {
-        padding: 1rem;
       }
     }
 
     @media (max-width: 480px) {
-      .main-content {
-        padding: 2rem 1.5rem;
-      }
-      
       .random-projects__grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
       }
       
-      .project-card {
-        padding: 1.5rem;
+      .toc-list {
+        grid-template-columns: 1fr;
       }
       
-      .intro-text {
-        font-size: 1.1rem;
+      .main-content {
+        padding: 1rem;
       }
-    }
-
-    /* 隐藏元素（仅屏幕阅读器可见） */
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      border: 0;
     }
   </style>
 </head>
@@ -559,27 +338,6 @@
       <h2 class="random-projects__title">Featured Projects</h2>
       <p class="random-projects__subtitle">A selection of recent work across disciplines</p>
       <div id="random-projects-container" class="random-projects__grid">
-        <!-- 示例项目卡片 -->
-        <a href="tech.html#project1" class="project-card">
-          <span class="project-category">Tech</span>
-          <h3 class="project-title">AI-driven Data Visualization Platform</h3>
-          <p class="project-desc">Interactive platform for exploring complex datasets with machine learning insights and real-time analytics</p>
-        </a>
-        <a href="art.html#project2" class="project-card">
-          <span class="project-category">Art</span>
-          <h3 class="project-title">Generative Art Series: Digital Ecosystems</h3>
-          <p class="project-desc">Algorithmic artwork exploring the intersection of code, nature, and aesthetics through procedural generation</p>
-        </a>
-        <a href="digital-humanities.html#project3" class="project-card">
-          <span class="project-category">Digital Humanities</span>
-          <h3 class="project-title">Digital Archive Interface for Historical Research</h3>
-          <p class="project-desc">Web-based tool for accessing, analyzing, and visualizing historical document collections with timeline and network views</p>
-        </a>
-        <a href="critical-thinking.html#project4" class="project-card">
-          <span class="project-category">Critical Thinking</span>
-          <h3 class="project-title">Media Theory Analysis: AI and Creative Labor</h3>
-          <p class="project-desc">Critical examination of how AI tools reshape creative processes, authorship, and digital labor in contemporary media</p>
-        </a>
       </div>
     </section>
 
@@ -588,7 +346,10 @@
     </footer>
   </main>
 
+  <script src="projects-data.js"></script>
+  <script src="main.js"></script>
   <script>
+    // 简单脚本：设置年份和高亮当前页面链接
     document.addEventListener('DOMContentLoaded', function() {
       // 设置版权年份
       document.getElementById('year').textContent = new Date().getFullYear();
@@ -601,7 +362,7 @@
         const linkHref = link.getAttribute('href');
         if (currentPage === linkHref || 
             (currentPage === '' && linkHref === 'index.html') ||
-            (currentPage === 'index.html' && linkHref === 'tech.html')) {
+            (currentPage === 'index.html' && linkHref === 'tech.html')) { // 首页默认高亮Tech
           link.classList.add('active');
         } else {
           link.classList.remove('active');
@@ -622,18 +383,6 @@
               behavior: 'smooth'
             });
           }
-        });
-      });
-      
-      // 添加卡片悬停时的微光效果
-      document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mousemove', function(e) {
-          const rect = this.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          
-          this.style.setProperty('--mouse-x', `${x}px`);
-          this.style.setProperty('--mouse-y', `${y}px`);
         });
       });
     });
