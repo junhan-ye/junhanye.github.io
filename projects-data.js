@@ -3,7 +3,8 @@
  * Each project has: title, section, description, link (optional), year (optional).
  */
 const PROJECTS = [
-  { title: 'Sample Tech Project', section: 'tech', description: 'A technical project or tool.', link: 'sections/tech.html#sub-section-1', year: '2024' },
+  { title: 'OLD MYTHOLOGY, NEW CONNECTIONS ', section: 'DH', description: 'An Immersive 3D Digital Storytelling Approach to Global Creation Myths.', 
+   link: 'https://drive.google.com/file/d/1j90StDAVqq13C7cbj9VenTpzTnjQul68/view?usp=drive_link', year: '2024-2025' },
   { title: 'Data Visualization', section: 'tech', description: 'Charts and interactive dashboards.', link: 'sections/tech.html#sub-section-2', year: '2024' },
   { title: 'Interactive Art Piece', section: 'art', description: 'An artwork that responds to input.', link: 'sections/art.html#sub-section-1', year: '2023' },
   { title: 'Exhibition / Show', section: 'art', description: 'Curated or participatory art show.', link: 'sections/art.html#sub-section-2', year: '2023' },
