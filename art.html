@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art — Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="site-name site-name--link">Your Name</a>
+      <nav class="contact-nav">
+        <a href="mailto:you@example.com">Email</a>
+        <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/you" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content main-content--section">
+    <nav class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span>Art</span>
+    </nav>
+
+    <h1 class="section-page-title">Art</h1>
+    <p class="section-lead">Visual and creative projects, exhibitions, and collaborations.</p>
+
+    <div class="subsections">
+      <section id="sub-section-1" class="subsection">
+        <h2 class="subsection__title">Interactive &amp; digital art</h2>
+        <p class="subsection__text">Works that involve code, interaction, or digital media. Add images, videos, or links to live pieces.</p>
+      </section>
+
+      <section id="sub-section-2" class="subsection">
+        <h2 class="subsection__title">Exhibitions &amp; shows</h2>
+        <p class="subsection__text">Solo or group shows, residencies, and public installations. Include dates, venues, and documentation.</p>
+      </section>
+
+      <section id="sub-section-3" class="subsection">
+        <h2 class="subsection__title">Other media</h2>
+        <p class="subsection__text">Drawing, sculpture, sound, or other forms. Customize these subsections to match your practice.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Your Name. <a href="../index.html">Back to home</a>.</p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

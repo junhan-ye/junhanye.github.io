@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech — Your Name</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="../index.html" class="site-name site-name--link">Your Name</a>
+      <nav class="contact-nav">
+        <a href="mailto:you@example.com">Email</a>
+        <a href="https://linkedin.com/in/you" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/you" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content main-content--section">
+    <nav class="breadcrumb">
+      <a href="../index.html">Home</a>
+      <span aria-hidden="true">/</span>
+      <span>Tech</span>
+    </nav>
+
+    <h1 class="section-page-title">Tech</h1>
+    <p class="section-lead">Software, systems, tools, and technical work.</p>
+
+    <div class="subsections">
+      <section id="sub-section-1" class="subsection">
+        <h2 class="subsection__title">Software &amp; development</h2>
+        <p class="subsection__text">Projects and roles involving programming, APIs, and software design. Add your own project descriptions, links, and screenshots here.</p>
+      </section>
+
+      <section id="sub-section-2" class="subsection">
+        <h2 class="subsection__title">Data &amp; visualization</h2>
+        <p class="subsection__text">Data pipelines, analysis, and visualizations. You can list tools (e.g. Python, D3, Tableau) and link to live demos or repos.</p>
+      </section>
+
+      <section id="sub-section-3" class="subsection">
+        <h2 class="subsection__title">Infrastructure &amp; systems</h2>
+        <p class="subsection__text">DevOps, servers, or system design work. Replace this placeholder with your own subsections and content.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Your Name. <a href="../index.html">Back to home</a>.</p>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
