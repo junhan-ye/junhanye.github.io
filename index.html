@@ -7,65 +7,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <!-- 修改这里：去掉css/前缀 -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <h1 class="site-name">Junhan Ye 叶珺涵</h1>
-      <nav class="contact-nav">
-        <a href="">jy378@duke.edu</a>
-        <a href="https://www.linkedin.com/in/junhan-ye-1b814628a" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/you" target="_blank" rel="noopener">portfolio</a>
-      </nav>
+  <!-- ... 其他内容保持不变 ... -->
+
+  <section class="sections-nav" aria-label="Main sections">
+    <h2 class="visually-hidden">Explore by area</h2>
+    <div class="section-cards">
+      <!-- 修改这里：去掉sections/前缀 -->
+      <a href="tech.html" class="section-card" data-section="tech">
+        <span class="section-card__label">Tech</span>
+        <span class="section-card__desc">Software, systems, and technical work</span>
+      </a>
+      <a href="art.html" class="section-card" data-section="art">
+        <span class="section-card__label">Art</span>
+        <span class="section-card__desc">Visual and creative projects</span>
+      </a>
+      <a href="digital-humanities.html" class="section-card" data-section="digital-humanities">
+        <span class="section-card__label">Digital Humanities</span>
+        <span class="section-card__desc">Research, archives, and digital methods</span>
+      </a>
+      <a href="critical-thinking.html" class="section-card" data-section="critical-thinking">
+        <span class="section-card__label">Critical Thinking</span>
+        <span class="section-card__desc">Writing, analysis, and reflection</span>
+      </a>
     </div>
-  </header>
+  </section>
 
-  <main class="main-content">
-    <section class="intro-section">
-      <h2 class="visually-hidden">About</h2>
-      <p class="intro-text">
-        I work across <strong>tech</strong>, <strong>art</strong>, <strong>digital humanities</strong>, and <strong>critical thinking</strong>. 
-        This site is a map of past experiences and projects—each section leads to subsections and selected work.
-      </p>
-    </section>
+  <!-- ... 其他内容保持不变 ... -->
 
-    <section class="sections-nav" aria-label="Main sections">
-      <h2 class="visually-hidden">Explore by area</h2>
-      <div class="section-cards">
-        <a href="sections/tech.html" class="section-card" data-section="tech">
-          <span class="section-card__label">Tech</span>
-          <span class="section-card__desc">Software, systems, and technical work</span>
-        </a>
-        <a href="sections/art.html" class="section-card" data-section="art">
-          <span class="section-card__label">Art</span>
-          <span class="section-card__desc">Visual and creative projects</span>
-        </a>
-        <a href="sections/digital-humanities.html" class="section-card" data-section="digital-humanities">
-          <span class="section-card__label">Digital Humanities</span>
-          <span class="section-card__desc">Research, archives, and digital methods</span>
-        </a>
-        <a href="sections/critical-thinking.html" class="section-card" data-section="critical-thinking">
-          <span class="section-card__label">Critical Thinking</span>
-          <span class="section-card__desc">Writing, analysis, and reflection</span>
-        </a>
-      </div>
-    </section>
-
-    <section class="random-projects" aria-label="Sample projects">
-      <h2 class="random-projects__title">A few projects</h2>
-      <p class="random-projects__subtitle">Random selection from across sections</p>
-      <div id="random-projects-container" class="random-projects__grid">
-        <!-- Filled by JavaScript from data/projects.js -->
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Your Name. Built as a personal portfolio.</p>
-  </footer>
-
-  <script src="js/projects-data.js"></script>
-  <script src="js/main.js"></script>
+  <!-- 修改这里：去掉js/前缀 -->
+  <script src="projects-data.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
