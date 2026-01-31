@@ -366,8 +366,8 @@
       links.forEach(link => {
         const linkHref = link.getAttribute('href');
         if (currentPage === linkHref || 
-            (currentPage === '' && linkHref === 'index.html') ||
-            // (currentPage === 'index.html' && linkHref === 'tech.html')) { // 首页默认高亮Tech
+            (currentPage === '' && linkHref === 'index.html')) { 
+            //(currentPage === 'index.html' && linkHref === 'tech.html')) {
           link.classList.add('active');
         } else {
           link.classList.remove('active');
