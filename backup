@@ -1,1 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Junhan Ye — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 添加新样式 */
+    :root {
+      --sidebar-width: 280px;
+      --sidebar-bg: #f8f9fa;
+      --content-bg: #ffffff;
+      --border-color: #eaeaea;
+      --text-primary: #333;
+      --text-secondary: #666;
+      --accent-color: #0077cc;
+      --transition-speed: 0.3s;
+    }
 
+    body {
+      margin: 0;
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text-primary);
+      background: var(--content-bg);
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* 侧边栏样式 */
+    .sidebar {
+      width: var(--sidebar-width);
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border-color);
+      padding: 2rem 1.5rem;
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+      box-sizing: border-box;
+    }
+
+    .site-header {
+      margin-bottom: 3rem;
+    }
+
+    .site-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      margin: 0 0 0.5rem 0;
+      color: var(--text-primary);
+    }
+
+    .contact-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .contact-nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color var(--transition-speed);
+    }
+
+    .contact-nav a:hover {
+      color: var(--accent-color);
+    }
+
+    /* 目录样式 */
+    .table-of-contents {
+      margin-top: 2rem;
+    }
+
+    .toc-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-item {
+      margin-bottom: 0.8rem;
+    }
+
+    .toc-link {
+      display: flex;
+      flex-direction: column;
+      padding: 0.8rem 1rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      border-radius: 6px;
+      transition: all var(--transition-speed);
+      background: transparent;
+      border: 1px solid transparent;
+    }
+
+    .toc-link:hover,
+    .toc-link.active {
+      background: var(--content-bg);
+      border-color: var(--border-color);
+      color: var(--accent-color);
+    }
+
+    .toc-label {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .toc-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* 主内容区样式 */
+    .main-content {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      padding: 3rem 4rem;
+      max-width: 1500px;
+      box-sizing: border-box;
+    }
+
+    .intro-section {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .intro-text {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: var(--text-primary);
+      margin: 0;
+    }
+
+    .intro-text strong {
+      color: var(--accent-color);
+    }
+
+    /* 项目展示区 */
+    .random-projects {
+      margin-top: 3rem;
+    }
+
+    .random-projects__title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .random-projects__subtitle {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    .random-projects__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--sidebar-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: all var(--transition-speed);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+      border-color: var(--accent-color);
+    }
+
+    .project-category {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: var(--accent-color);
+      color: white;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* 响应式设计 */
+    @media (max-width: 1024px) {
+      :root {
+        --sidebar-width: 240px;
+      }
+      
+      .main-content {
+        padding: 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      
+      .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 1.5rem;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+      }
+      
+      .main-content {
+        margin-left: 0;
+        padding: 1.5rem;
+      }
+      
+      .contact-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      
+      .toc-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .random-projects__grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .toc-list {
+        grid-template-columns: 1fr;
+      }
+      
+      .main-content {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 侧边栏 -->
+  <aside class="sidebar">
+    <header class="site-header">
+      <h1 class="site-name">Junhan Ye 叶珺涵</h1>
+      <nav class="contact-nav">
+        <a href="mailto:jy378@duke.edu">jy378@duke.edu</a>
+        <a href="https://www.linkedin.com/in/junhan-ye-1b814628a" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/you" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </header>
+
+    <nav class="table-of-contents" aria-label="Table of Contents">
+      <h2 class="toc-title">Explore by Area</h2>
+      <ul class="toc-list">
+        <li class="toc-item">
+          <a href="tech.html" class="toc-link active">
+            <span class="toc-label">Tech</span>
+            <span class="toc-desc">Software, systems, and technical work</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="art.html" class="toc-link">
+            <span class="toc-label">Art</span>
+            <span class="toc-desc">Visual and creative projects</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="digital-humanities.html" class="toc-link">
+            <span class="toc-label">Digital Humanities</span>
+            <span class="toc-desc">Research, archives, and digital methods</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="critical-thinking.html" class="toc-link">
+            <span class="toc-label">Critical Thinking</span>
+            <span class="toc-desc">Writing, analysis, and reflection</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- 主内容区 -->
+  <main class="main-content">
+    <section class="intro-section">
+      <h1 class="visually-hidden">About</h1>
+      <p class="intro-text">
+        I work across <strong>tech</strong>, <strong>art</strong>, <strong>digital humanities</strong>, and <strong>critical thinking</strong>. 
+        This site is a map of past experiences and projects—each section leads to subsections and selected work.
+      </p>
+    </section>
+
+    <section class="random-projects" aria-label="Sample projects">
+      <h2 class="random-projects__title">Featured Projects</h2>
+      <p class="random-projects__subtitle">A selection of recent work across disciplines</p>
+      <div id="random-projects-container" class="random-projects__grid">
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; <span id="year">2024</span> Junhan Ye. Built as a personal portfolio.</p>
+    </footer>
+  </main>
+
+  <script src="projects-data.js"></script>
+  <script src="main.js"></script>
+  <script>
+    // 简单脚本：设置年份和高亮当前页面链接
+    document.addEventListener('DOMContentLoaded', function() {
+      // 设置版权年份
+      document.getElementById('year').textContent = new Date().getFullYear();
+      
+      // 高亮当前页面链接
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const links = document.querySelectorAll('.toc-link');
+      
+      links.forEach(link => {
+        const linkHref = link.getAttribute('href');
+        if (currentPage === linkHref || 
+            (currentPage === '' && linkHref === 'index.html') ||
+            (currentPage === 'index.html' && linkHref === 'tech.html')) { // 首页默认高亮Tech
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+      
+      // 平滑滚动
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
