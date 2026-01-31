@@ -5,7 +5,8 @@
 const PROJECTS = [
   { title: 'OLD MYTHOLOGY, NEW CONNECTIONS ', section: 'DH', description: 'An Immersive 3D Digital Storytelling Approach to Global Creation Myths.', 
    link: 'https://drive.google.com/file/d/1j90StDAVqq13C7cbj9VenTpzTnjQul68/view?usp=drive_link', year: '2024-2025' },
-  { title: 'Data Visualization', section: 'tech', description: 'Charts and interactive dashboards.', link: 'sections/tech.html#sub-section-2', year: '2024' },
+  { title: 'NEW VISIONS, EXTENDED SENSES', section: 'Tech', description: 'A Semi-supervised 3D Hand Pose Estimation CNN.', 
+   link: 'https://drive.google.com/file/d/1TESInImLI-BlSkogc9qGEuIpJPJI5Qjs/view?usp=drive_link', year: '2022-2023' },
   { title: 'Interactive Art Piece', section: 'art', description: 'An artwork that responds to input.', link: 'sections/art.html#sub-section-1', year: '2023' },
   { title: 'Exhibition / Show', section: 'art', description: 'Curated or participatory art show.', link: 'sections/art.html#sub-section-2', year: '2023' },
   //{ title: 'Archive Digitization', section: 'digital-humanities', description: 'Digitizing and cataloging archival materials.', link: 'sections/digital-humanities.html#sub-section-1', year: '2024' },
